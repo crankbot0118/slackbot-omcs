@@ -18,8 +18,7 @@ try:
     load_dotenv()
     if "SLACK_BOT_TOKEN" not in os.environ or "SLACK_APP_TOKEN" not in os.environ:
         raise ValueError("Required environment variables SLACK_BOT_TOKEN and/or SLACK_APP_TOKEN not found")
-    logger.debug("Bot Token: %s...%s", os.environ["SLACK_BOT_TOKEN"][:10], os.environ["SLACK_BOT_TOKEN"][-5:])
-    logger.debug("App Token: %s...%s", os.environ["SLACK_APP_TOKEN"][:10], os.environ["SLACK_APP_TOKEN"][-5:])
+    logger.debug("Environment variables loaded successfully")
 except Exception as e:
     logger.critical(f"Failed to load environment variables: {e}")
     raise
